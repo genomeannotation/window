@@ -14,6 +14,8 @@ def main():
     # Read sam file one line at a time
     for line in sys.stdin:
         fields = line.strip().split()
+        if len(fields) < 4:
+            continue
         seq_id = fields[2]
         position = int(fields[3])
         window_number = int(math.ceil(float(position)/args.size)) 
