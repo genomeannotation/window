@@ -25,7 +25,7 @@ def main():
         window_number = int(math.floor(float(position)/(window_size+skip))) 
         window_id = seq_id + "_window_" + str(window_number+1)
         window_position = position - ((window_size+skip) * window_number)
-        if position < window_size:
+        if window_position <= window_size:
             # Only write the read if it's not in the skip zone
             fields[2] = window_id
             fields[3] = str(window_position)
